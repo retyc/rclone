@@ -20,9 +20,8 @@ Paths may be as deep as required, e.g. `remote:space/directory/subdirectory`.
 ## Configuration
 
 The initial setup needs the existing passphrase of your Retyc encryption
-key, so answer `y` and type it in when asked for it, and then
-a login to Retyc which you approve in your browser. `rclone config`
-walks you through it.
+key, which you type in when asked for it, and then a login to Retyc
+which you approve in your browser. `rclone config` walks you through it.
 
 Here is an example of how to make a remote called `remote`.  First run:
 
@@ -51,13 +50,8 @@ Storage> retyc
 Option key_passphrase.
 Passphrase of your existing Retyc encryption key.
 This is the passphrase set when your Retyc account or key was created.
-Type it in: a generated passphrase can't unlock the key.
 The key decrypts your storage spaces. The passphrase never leaves this
 machine.
-Choose an alternative below.
-y) Yes, type in my own password
-g) Generate random password
-y/g> y
 Enter the password:
 password:
 Confirm the password:
@@ -230,7 +224,6 @@ Here are the Standard options specific to retyc (Retyc end-to-end encrypted stor
 Passphrase of your existing Retyc encryption key.
 
 This is the passphrase set when your Retyc account or key was created.
-Type it in: a generated passphrase can't unlock the key.
 
 The key decrypts your storage spaces. The passphrase never leaves this
 machine.

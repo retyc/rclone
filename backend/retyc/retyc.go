@@ -83,11 +83,11 @@ func init() {
 			Help: `Passphrase of your existing Retyc encryption key.
 
 This is the passphrase set when your Retyc account or key was created.
-Type it in: a generated passphrase can't unlock the key.
 
 The key decrypts your storage spaces. The passphrase never leaves this
 machine.`,
 			IsPassword: true,
+			NoGenerate: true,
 			Required:   true,
 			Sensitive:  true,
 		}, {
