@@ -234,8 +234,21 @@ func Enter(what string, kind string, defaultValue string, required bool) string 
 
 // ChoosePassword asks the user for a password
 func ChoosePassword(defaultValue string, required bool) string {
+	return choosePassword(defaultValue, required, false)
+}
+
+// choosePassword asks the user for a password, offering to generate a
+// random one unless noGenerate is set
+func choosePassword(defaultValue string, required bool, noGenerate bool) string {
+	if noGenerate && required && defaultValue == "" {
+		// Typing it in is the only alternative so don't ask
+		return obscure.MustObscure(ChangePassword("the"))
+	}
 	fmt.Printf("Choose an alternative below.")
 	actions := []string{"yYes, type in my own password", "gGenerate random password"}
+	if noGenerate {
+		actions = actions[:1]
+	}
 	defaultAction := -1
 	if defaultValue != "" {
 		defaultAction = len(actions)
@@ -516,7 +529,7 @@ func ChooseOption(o *fs.Option, name string) string {
 	}
 
 	if o.IsPassword {
-		return ChoosePassword(defaultValue, o.Required)
+		return choosePassword(defaultValue, o.Required, o.NoGenerate)
 	}
 
 	what := "value"

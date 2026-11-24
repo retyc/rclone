@@ -663,6 +663,7 @@ format. Each block describes a single option.
 | Hide       | Visibility | N | if non zero, this option is hidden from the configurator or the command line |
 | Required   | bool       | N | this option is required, meaning value cannot be empty unless there is a default |
 | IsPassword | bool       | N | set if the option is a password |
+| NoGenerate | bool       | Y | set if the password must be typed in, not generated |
 | NoPrefix   | bool       | N | set if the option for this should not use the backend prefix |
 | Advanced   | bool       | N | set if this is an advanced config option |
 | Exclusive  | bool       | N | set if the answer can only be one of the examples (empty string allowed unless Required or Default is set) |

@@ -168,6 +168,44 @@ func TestChooseOption(t *testing.T) {
 	assert.Equal(t, "", config.GetValue("test", "pass"))
 }
 
+func TestChooseOptionNoGenerate(t *testing.T) {
+	defer testConfigFile(t, []fs.Option{{
+		Name:       "pass",
+		IsPassword: true,
+		NoGenerate: true,
+	}}, "crud.conf")()
+	ctx := context.Background()
+	config.Password = func(bits int) (string, error) {
+		t.Fatal("password generated")
+		return "", nil
+	}
+
+	// script for creating remote
+	config.ReadLine = makeReadLine([]string{
+		"config_test_remote", // type
+		"g",                  // generate password - not offered
+		"y",                  // type my own password
+		"secret",             // password
+		"secret",             // repeat
+		"y",                  // looks good, save
+	})
+	require.NoError(t, config.NewRemote(ctx, "test"))
+	assert.Equal(t, "secret", obscure.MustReveal(config.GetValue("test", "pass")))
+
+	// script for creating remote with a required password
+	config.ReadLine = makeReadLine([]string{
+		"config_test_remote", // type
+		"secret2",            // password - typed in without choosing
+		"secret2",            // repeat
+		"y",                  // looks good, save
+	})
+	regInfo, err := fs.Find("config_test_remote")
+	require.NoError(t, err)
+	regInfo.Options[0].Required = true
+	require.NoError(t, config.NewRemote(ctx, "test"))
+	assert.Equal(t, "secret2", obscure.MustReveal(config.GetValue("test", "pass")))
+}
+
 func TestNewRemoteName(t *testing.T) {
 	defer testConfigFile(t, simpleOptions, "crud.conf")()
 	ctx := context.Background()
