@@ -120,6 +120,7 @@ directories to and from different cloud storage providers.
 - Rackspace Cloud Files [:page_facing_up:](https://rclone.org/swift/)
 - RackCorp Object Storage [:page_facing_up:](https://rclone.org/s3/#RackCorp)
 - RelAix.Storage [:page_facing_up:](https://rclone.org/s3/#relaix)
+- Retyc [:page_facing_up:](https://rclone.org/retyc/)
 - rsync.net [:page_facing_up:](https://rclone.org/sftp/#rsync-net)
 - Scaleway [:page_facing_up:](https://rclone.org/s3/#scaleway)
 - Scality (RING / ARTESCA) [:page_facing_up:](https://rclone.org/s3/#scality)

@@ -1,0 +1,25 @@
+backend: retyc
+name: Retyc
+tier: Tier 4
+maintainers: External
+features_score: 3
+integration_tests: Unknown
+data_integrity: Modtime
+performance: High
+adoption: New
+docs: Full
+security: High
+virtual: false
+remote: 'TestRetyc:rclone'
+features:
+- About
+- CanHaveEmptyDirectories
+- Copy
+- DirCacheFlush
+- DirMove
+- Move
+- Purge
+- ReadMimeType
+- Shutdown
+hashes: []
+precision: 1000

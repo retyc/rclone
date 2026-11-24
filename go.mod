@@ -77,6 +77,7 @@ require (
 	github.com/rclone/Proton-API-Bridge v1.0.5
 	github.com/rclone/go-proton-api v1.0.4
 	github.com/rclone/gofakes3 v0.0.12
+	github.com/retyc/retyc-cli/core v1.7.0-rc2
 	github.com/rfjakob/eme v1.2.0
 	github.com/rivo/uniseg v0.4.7
 	github.com/rogpeppe/go-internal v1.16.0
@@ -117,6 +118,8 @@ require (
 	cloud.google.com/go/auth v0.24.1-0.20261001053825-dbc26066f70a // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.3.0 // indirect
 	cloud.google.com/go/compute/metadata v0.10.0 // indirect
+	filippo.io/age v1.3.2 // indirect
+	filippo.io/hpke v0.4.0 // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/internal v1.13.0 // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/storage/internal v0.1.0 // indirect
 	github.com/AzureAD/microsoft-authentication-library-for-go v1.10.1 // indirect

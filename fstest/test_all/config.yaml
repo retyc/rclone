@@ -698,6 +698,9 @@ backends:
    fastlist: false
    ignoretests:
      - cmd/bisync
+ - backend:  "retyc"
+   remote:   "TestRetyc:rclone"
+   fastlist: false
  - backend:  "ulozto"
    remote:   "TestUlozto:"
    fastlist: false
